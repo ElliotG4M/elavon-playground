@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+. ${SCRIPTPATH}/_common
+
+if [[ "$(docker images -q ${DEV_CLI_IMAGE} 2> /dev/null)" == "" ]]; then
+    echo "Promotions API CLI image appears to be missing, attempting build..."
+    $SCRIPTPATH/build_cli_image
+fi
+
+# Create an empty git ignored .env file if it doesn't exist.
+# This is to prevent the --env-file flag from failing if the file doesn't exist.
+# Also allow user to define their XDEBUG settings in this file.
+touch ${SCRIPTPATH}/.env
+
+docker run --rm -it \
+    -w /app \
+    -v ${SCRIPTPATH}/../../:/app \
+    -v ${SCRIPTPATH}/../../storage/app/xhdata/data:/xhdata \
+    -v ${SCRIPTPATH}/../../storage/app/xhdata/controls:/controls \
+    -e APP_MODE=DEV \
+    -e XHPROF_OUTPUT=/xhdata \
+    --env-file ${SCRIPTPATH}/.env \
+    --network=docker-compose \
+    "${DEV_CLI_IMAGE}" "$@"

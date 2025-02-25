@@ -1,0 +1,13 @@
+{
+  "name": "gear4music/elavon-playground",
+  "description": "Testing Elavon APIs",
+  "autoload": {
+    "psr-4": {
+      "Gear4music\\ElavonPlayground\\": "src"
+    }
+  },
+  "require": {
+    "php": "^8.4",
+    "guzzlehttp/guzzle": "^7.8"
+  }
+}

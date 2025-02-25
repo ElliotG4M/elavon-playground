@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#title           :composer
+#description     :This script will run composer within a container.
+#author		     :Dan Cryer <dan.cryer@gear4music.com>
+#usage		     :bash composer [options]
+SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+. ${SCRIPTPATH}/_common
+
+echo "Running Composer 2 in PHP 8.4 context"
+
+docker run --rm -it \
+    -w /app \
+    -v ${SCRIPTPATH}/../../:/app \
+    -e COMPOSER_AUTH="{ \"github-oauth\": { \"github.com\": \"$(composer config github-oauth.github.com)\"}}" \
+    "${COMPOSER_IMAGE}" "$@"

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+. ${SCRIPTPATH}/_common
+
+docker build --pull -t ${DEV_CLI_IMAGE} -f ${SCRIPTPATH}/../../docker/php-apache/dev/Dockerfile .

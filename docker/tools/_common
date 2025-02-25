@@ -1,0 +1,2 @@
+DEV_CLI_IMAGE="europe-docker.pkg.dev/g4m-docker-images/g4m/php/unified/php-apache-8.4.2:v2.3.0"
+COMPOSER_IMAGE="europe-docker.pkg.dev/g4m-docker-images/g4m/website/tools/website-tool-composer2-slim:v1.8.0-php8.4.2"
