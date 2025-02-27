@@ -1,0 +1,47 @@
+# # PaymentSession
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**href** | **string** | PaymentSession [Resource URL](#section/Overview/Values) (self link) | [optional] [readonly]
+**id** | **string** | PaymentSession [Resource ID](#section/Overview/Values) assigned by server. | [optional] [readonly]
+**created_at** | **\DateTime** | Creation timestamp | [optional] [readonly]
+**modified_at** | **\DateTime** | Modification timestamp | [optional] [readonly]
+**expires_at** | **\DateTime** | Expiration timestamp | [optional]
+**merchant** | **string** | Merchant [Resource URL](#section/Overview/Values) | [optional] [readonly]
+**account** | **string** | Account [Resource URL](#section/Overview/Values) | [optional] [readonly]
+**order** | **string** | Order [Resource URL](#section/Overview/Values) for which payment is being requested | [optional] [readonly]
+**allowed_payment_methods** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PaymentMethod[]**](PaymentMethod.md) | Used to specify the payment methods allowed to be shown in the hosted payments page. | [optional]
+**allowed_payment_method_origins** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PaymentMethodOrigin[]**](PaymentMethodOrigin.md) | The allowed origins of the payment methods listed in the allowedPaymentMethods field. | [optional]
+**payment_link** | **string** | PaymentLink [Resource URL](#section/Overview/Values) | [optional]
+**sales_tax** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\NonNegativeAmountAndCurrency**](NonNegativeAmountAndCurrency.md) | Sales Tax | [optional] [readonly]
+**forex_advice** | **string** | ForexAdvice [Resource URL](#section/Overview/Values) | [optional]
+**surcharge_advice** | **string** | Surcharge Advice [Resource URL](#section/Overview/Values) | [optional]
+**transaction** | **string** | Transaction [Resource URL](#section/Overview/Values) | [optional]
+**hosted_card** | **string** | HostedCard [Resource URL](#section/Overview/Values) | [optional]
+**stored_card** | **string** | StoredCard [Resource URL](#section/Overview/Values) | [optional]
+**google_pay_payment** | **string** | GooglePayPayment obtained through the create Google Pay payment API call. Required for &#39;ecommerce&#39; &#39;sale&#39; transactions. | [optional]
+**apple_pay_payment** | **string** | ApplePayPayment obtained through the create Apple Pay payment API call. Required for &#39;ecommerce&#39; &#39;sale&#39; transactions. | [optional]
+**paze_payment** | **string** | PazePayment obtained through the create Apple Pay payment API call. Required for &#39;ecommerce&#39; &#39;sale&#39; transactions. | [optional]
+**blik** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Blik**](Blik.md) |  | [optional]
+**shopper** | **string** | Shopper [Resource URL](#section/Overview/Values) | [optional]
+**debtor_account** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\DebtorAccount**](DebtorAccount.md) | Account information required for MCC 6012/6050/6051 merchants | [optional]
+**three_d_secure** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ThreeDSecureV2**](ThreeDSecureV2.md) | Additional data that&#39;s only needed for 3-D Secure version 2 processing. | [optional]
+**shopper_email_address** | **string** | Shopper&#39;s email address, useful for fraud detection and to provide a receipt | [optional]
+**bill_to** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Contact**](Contact.md) | Billing contact details that will be used by default for the hosted card | [optional]
+**ship_to** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Contact**](Contact.md) | Shipping contact details | [optional]
+**hpp_type** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\HppType**](HppType.md) | Hosted payments page type indicates the type of hosted payments page for the payment session, defaults to fullPageRedirect | [optional]
+**return_url** | **string** | URL to redirect to after payment details are collected | [optional] [readonly]
+**cancel_url** | **string** | URL to redirect to if the shopper cancels | [optional] [readonly]
+**origin_url** | **string** | Origin where the hosted payment page will be embedded. Required if using the lightbox. Multiple origin URLs are allowed. Each URL must be separated by a space and each URL must follow the regex. | [optional] [readonly]
+**default_language_tag** | **string** | Default IETF language tag, a tag that represents language names and countries, to be used in the Hosted Payment Page, such as en-GB meaning &#39;English (Great Britain)&#39;. | [optional] [readonly]
+**do_create_transaction** | **bool** | Determines whether or not a Hosted Payment Page will perform an end to end transaction. If set to &#39;true&#39;, information a cardholder submits into a hosted payment form will automatically be used to create a Transaction resource. If set to &#39;false&#39;, the information submitted through the hosted payment form will automatically be used to generate a [HostedCard resource](#tag/Hosted-Cards). This value defaults to false. For more information on using the hosted payment form, see the [integration guide](/docs/converge/hosted-payments-overview).  In addition, if set to &#39;false&#39;, then digital wallets are not prompted in the hosted payments page (HPP). | [optional] [readonly] [default to false]
+**do_capture** | **bool** | This value will be passed along to any transaction created later in the payment flow. See doCapture on transaction | [optional] [readonly] [default to true]
+**do_three_d_secure** | **bool** | Determines whether or not the HPP will perform 3-D secure validation | [optional] [readonly]
+**do_reset** | **bool** | Determines whether or not the HPP will be reset | [optional] [readonly]
+**previous_transactions** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Transaction[]**](Transaction.md) | Previous transactions | [optional] [readonly]
+**custom_reference** | **string** | Optional reference provided by the merchant | [optional]
+**custom_fields** | **array<string,string>** | Custom fields, an object containing arbitrary string values.  Field names and values must not exceed 64 and 1024 characters, respectively. | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

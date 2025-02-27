@@ -1,0 +1,34 @@
+version: '2'
+
+networks:
+  default:
+    name: docker-compose
+    external: true
+
+services:
+
+  elavon:
+    build:
+      context: ../../../
+      dockerfile: ./docker/php-apache/dev/Dockerfile
+    ports:
+      - 8080:80
+    volumes:
+      - ../../../:/app
+    environment:
+      APP_MODE: DEV
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    labels:
+      # Traefik 2.x
+      - traefik.http.routers.elavon.entrypoints=https
+      - traefik.http.routers.elavon.rule=Host(`elavon.local.dev.g4m.co.uk`)
+      - traefik.http.routers.elavon.service=elavon
+      - traefik.http.routers.elavon.tls=true
+      - traefik.http.services.elavon.loadbalancer.server.scheme=https
+      - traefik.http.services.elavon.loadbalancer.server.port=443
+      - traefik.http.middlewares.elavon-redirectscheme.redirectscheme.scheme=https
+      # Insecure router for redirecting http to https
+      - traefik.http.routers.elavon-insecure.entrypoints=http
+      - traefik.http.routers.elavon-insecure.rule=Host(`elavon.local.dev.g4m.co.uk`)
+      - traefik.http.routers.elavon-insecure.middlewares=elavon-redirectscheme

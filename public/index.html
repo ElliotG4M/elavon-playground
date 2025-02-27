@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Elavon Playground</title>
+</head>
+
+<style>
+    .rows {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        align-content: center;
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        align-content: center;
+    }
+    
+    .formItem {
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<script>
+    const createEpgTransaction = async (amount, orderNumber, shopperUrl, blikCode, email = '') => {
+        console.log(amount);
+        const response = await fetch('http://localhost:8080/v1/create-epg-transaction', {
+            method: 'POST',
+            body: JSON.stringify({
+                amount: amount,
+                order_number: orderNumber,
+                shopper_url: shopperUrl,
+                blik_code: blikCode,
+                email: email
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const responseJson = await response.json();
+        document.getElementById('result').innerHTML = JSON.stringify(responseJson, null, 4);
+    }
+
+    const getEpgTransaction = async (transactionId) => {
+        const response = await fetch('http://localhost:8080/v1/get-epg-transaction', {
+            method: 'POST',
+            body: JSON.stringify({
+                transaction_id: transactionId,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const responseJson = await response.json(); //extract JSON from the http response
+        document.getElementById('result').innerHTML = JSON.stringify(responseJson, null, 4);
+    }
+
+    const createPmgTransaction = async (amount, orderNumber, paymentMethod, currencyCode, countryCode, tradingBrand, redirectUrl, pushStatusUrl) => {
+        const response = await fetch('http://localhost:8080/v1/create-pmg-transaction', {
+            method: 'POST',
+            body: JSON.stringify({
+                amount: amount,
+                order_number: orderNumber,
+                payment_method: paymentMethod,
+                currency_code: currencyCode,
+                country_code: countryCode,
+                trading_brand: tradingBrand,
+                redirect_url: redirectUrl,
+                push_status_url: pushStatusUrl
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const responseJson = await response.json(); //extract JSON from the http response
+        document.getElementById('result').innerHTML = JSON.stringify(responseJson, null, 4);
+    }
+
+    const getPmgTransaction = async (transactionId) => {
+        const response = await fetch('http://localhost:8080/v1/get-pmg-transaction', {
+            method: 'POST',
+            body: JSON.stringify({
+                transaction_id: transactionId,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const responseJson = await response.json(); //extract JSON from the http response
+        document.getElementById('result').innerHTML = JSON.stringify(responseJson, null, 4);
+    }
+</script>
+
+<body>
+
+<h1>Elavon Playground</h1>
+
+<div class="columns">
+    <div class="rows">
+        <h2>Blik (Elavon Payment Gateway)</h2>
+
+        <div class="rows">
+            <h3>Create Transaction</h3>
+
+            <label for="epg-amount">Amount</label>
+            <input id="epg-amount" type="text" value="" class="formItem"/>
+            <label for="epg-order-number">Order Number</label>
+            <input id="epg-order-number" type="text" value="" class="formItem"/>
+            <label for="epg-shopper-url">Shopper URL</label>
+            <input id="epg-shopper-url" type="text" value="" class="formItem"/>
+            <label for="epg-blik-code">BLIK Code</label>
+            <input id="epg-blik-code" type="text" value="" class="formItem"/>
+            <label for="epg-email">Customer Email</label>
+            <input id="epg-email" type="text" value="" class="formItem"/>
+
+            <button class="formItem" onclick="createEpgTransaction(
+                parseFloat(document.getElementById('epg-amount').value),
+                document.getElementById('epg-order-number').value,
+                document.getElementById('epg-shopper-url').value,
+                document.getElementById('epg-blik-code').value,
+                document.getElementById('epg-email').value
+            )">
+                Make Payment
+            </button>
+
+        </div>
+
+        <div class="rows">
+            <h3>Get Transaction</h3>
+            <label for="epg-transaction-id">Transaction ID</label>
+            <input id="epg-transaction-id" type="text" value="" class="formItem"/>
+
+            <button class="formItem" onclick="getEpgTransaction(
+                document.getElementById('epg-transaction-id').value
+            )">
+                Get Transaction
+            </button>
+        </div>
+    </div>
+
+    <div class="rows">
+        <h2>iDeal/p24 (Payment Method Gateway)</h2>
+        <div class="rows">
+            <h3>Create Transaction</h3>
+            <label for="pmg-amount">Amount</label>
+            <input id="pmg-amount" type="text" value="" class="formItem"/>
+            <label for="pmg-order-number">Order Number</label>
+            <input id="pmg-order-number" type="text" value="" class="formItem"/>
+            <label for="pmg-payment-method">Payment Method</label>
+            <select name="pmg-payment-method" id="pmg-payment-method" class="formItem">
+                <option value="ideal">ideal</option>
+                <option value="p24">p24</option>
+            </select>
+            <label for="pmg-currency-code">Currency Code</label>
+            <input id="pmg-currency-code" type="text" value="" class="formItem"/>
+            <label for="pmg-country-code">Country Code</label>
+            <input id="pmg-country-code" type="text" value="" class="formItem"/>
+            <label for="pmg-trading-brand">Trading Brand</label>
+            <select name="pmg-trading-brand" id="pmg-trading-brand" class="formItem">
+                <option value="Gear4music">Gear4music</option>
+                <option value="AV.com">AV.com</option>
+            </select>
+            <label for="pmg-redirect-url">Redirect URL</label>
+            <input id="pmg-redirect-url" type="text" value="" class="formItem"/>
+            <label for="pmg-push-status-url">Push Status URL</label>
+            <input id="pmg-push-status-url" type="text" value="" class="formItem"/>
+
+            <button class="formItem" onclick="createPmgTransaction(
+                parseFloat(document.getElementById('pmg-amount').value),
+                document.getElementById('pmg-order-number').value,
+                document.getElementById('pmg-payment-method').value,
+                document.getElementById('pmg-currency-code').value,
+                document.getElementById('pmg-country-code').value,
+                document.getElementById('pmg-trading-brand').value,
+                document.getElementById('pmg-redirect-url').value,
+                document.getElementById('pmg-push-status-url').value
+        )">Make Payment
+            </button>
+        </div>
+
+        <div class="rows">
+            <h3>Get Transaction</h3>
+            <label for="pmg-transaction-id">Transaction ID</label>
+            <input id="pmg-transaction-id" type="text" value="" class="formItem"/>
+
+            <button class="formItem" onclick="getPmgTransaction(
+                document.getElementById('pmg-transaction-id').value
+            )">
+                Get Transaction
+            </button>
+        </div>
+    </div>
+    <div class="rows">
+        <div>
+            <h2>Transaction</h2>
+            <div id="result" style="white-space: pre">
+            </div>
+        </div>
+        <div>
+            <h2>Notification</h2>
+            <div id="notification" style="white-space: pre"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

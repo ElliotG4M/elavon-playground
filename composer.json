@@ -1,13 +1,15 @@
 {
-  "name": "gear4music/elavon-playground",
-  "description": "Testing Elavon APIs",
-  "autoload": {
-    "psr-4": {
-      "Gear4music\\ElavonPlayground\\": "src"
-    }
-  },
-  "require": {
-    "php": "^8.4",
-    "guzzlehttp/guzzle": "^7.8"
-  }
+  "requestId": "454e9b55-e402-4511-bde3-89aa47347418",
+  "merchantId": "2554202555",
+  "merchantTxId": "b24dd64c-de6b-5bf6-6283-aa2167-M1234567",
+  "paymentMethod": "ideal",
+  "currencyCode": "EUR",
+  "countryCode": "NL",
+  "amount": "1200",
+  "shopperName": "Gear4music",
+  "shopperType": "E_COMMERCE",
+  "languageCode": "en",
+  "redirectUrl": "https://www.gear4music.com",
+  "systemId": "k546mwqfo-34q5m3",
+  "pushStatusUrl": "https://www.gear4music.com"
 }
