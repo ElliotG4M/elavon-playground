@@ -61,7 +61,7 @@ class Client
                 'code' => $blikCode,
             ]),
             'do_capture' => true,
-            'do_send_receipt' => false
+            'do_send_receipt' => true
         ]);
         // For some reason the generated code overwrites this in the constructor with an invalid default value
         // Set it again here
