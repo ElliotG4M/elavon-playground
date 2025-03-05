@@ -24,14 +24,14 @@ class CreateEpgTransaction extends ExtendedController
         );
 
         try {
-            $response = $client->createBlikTransaction(
+            $promise = $client->createBlikTransactionAsync(
                 $request->amount,
                 'PLN',
                 $request->blik_code,
                 $request->order_number,
-                $request->shopper_url,
                 $request->email
             );
+            $response = $promise->wait();
         } catch (ApiException $e) {
             $this->setResponseJson(["errors" => $e->getResponseBody()]);
             return;

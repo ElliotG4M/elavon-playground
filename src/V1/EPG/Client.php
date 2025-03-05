@@ -12,6 +12,7 @@ use Gear4music\ElavonPlayground\V1\EPG\Model\SaleTransaction;
 use Gear4music\ElavonPlayground\V1\EPG\Model\ShopperInteraction;
 use Gear4music\ElavonPlayground\V1\EPG\Model\Transaction;
 use Gear4music\ElavonPlayground\V1\EPG\Model\TransactionType;
+use GuzzleHttp\Promise\PromiseInterface;
 
 class Client
 {
@@ -33,17 +34,15 @@ class Client
      * @param string $currencyCode
      * @param string $blikCode
      * @param string $orderNumber
-     * @param string $shopperUrl
      * @param string $email
      * @return Transaction|FailureWrapper
      * @throws \Exception
      */
     public function createBlikTransaction(
-        float  $amount,
+        float  $amount, // Amount as float
         string $currencyCode,
-        string $blikCode,
+        string $blikCode, // 6 digit Blik code
         string $orderNumber,
-        string $shopperUrl, // Required? A URL for callback?
         string $email // customer email
     ): Transaction|FailureWrapper
     {
@@ -56,7 +55,38 @@ class Client
             'order_reference' => $orderNumber,
             'shopper_interaction' => ShopperInteraction::ECOMMERCE,
             'shopper_email_address' => $email,
-            //'shopper' => $shopperUrl,
+            'blik' => new Blik([
+                'code' => $blikCode,
+            ]),
+            'do_capture' => true,
+            'do_send_receipt' => true // Send email receipt to customer automatically
+        ]);
+        // For some reason the generated code overwrites this in the constructor with an invalid default value
+        // Set it again here
+        $transaction->setType(TransactionType::SALE);
+
+        return $this->transactionsApi->createTransaction(
+            $transaction
+        );
+    }
+
+    public function createBlikTransactionAsync(
+        float  $amount,
+        string $currencyCode,
+        string $blikCode,
+        string $orderNumber,
+        string $email // customer email
+    ): PromiseInterface
+    {
+        $transaction = new SaleTransaction([
+            'type' => TransactionType::SALE,
+            'total' => new PositiveAmountAndCurrency([
+                'amount' => $amount,
+                'currency_code' => $currencyCode,
+            ]),
+            'order_reference' => $orderNumber,
+            'shopper_interaction' => ShopperInteraction::ECOMMERCE,
+            'shopper_email_address' => $email,
             'blik' => new Blik([
                 'code' => $blikCode,
             ]),
@@ -67,7 +97,7 @@ class Client
         // Set it again here
         $transaction->setType(TransactionType::SALE);
 
-        return $this->transactionsApi->createTransaction(
+        return $this->transactionsApi->createTransactionAsync(
             $transaction
         );
     }

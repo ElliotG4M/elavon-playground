@@ -2,6 +2,11 @@
 
 A playground for the Elavon API. Basic local front-end, generated clients for the two APIs, and transaction controllers
 
+Run using 
+```bash 
+docker-compose up --build
+```
+
 ### How to regenerate
 From the root folder run:
 ```bash 
