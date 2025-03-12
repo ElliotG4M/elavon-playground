@@ -19,20 +19,20 @@ class Client
 
     private TransactionEndpointsForAuthorizationAndStatusCheckApi $transactionStatusApi;
 
-    public function __construct(string $host, string $merchantID, string $secretKey)
+    public function __construct(string $host, string $username, string $password)
     {
         $this->transactionAuthorizationApi = new TransactionAuthorizationEndpointApi(
             new \GuzzleHttp\Client(),
             Configuration::getDefaultConfiguration()
-                ->setUsername($merchantID)
-                ->setPassword($secretKey)
+                ->setUsername($username)
+                ->setPassword($password)
                 ->setHost($host)
         );
         $this->transactionStatusApi = new TransactionEndpointsForAuthorizationAndStatusCheckApi(
             new \GuzzleHttp\Client(),
             Configuration::getDefaultConfiguration()
-                ->setUsername($merchantID)
-                ->setPassword($secretKey)
+                ->setUsername($username)
+                ->setPassword($password)
                 ->setHost($host)
         );
     }
