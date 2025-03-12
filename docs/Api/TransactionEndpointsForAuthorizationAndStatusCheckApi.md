@@ -1,10 +1,10 @@
 # Gear4music\ElavonPlayground\V1\PMG\TransactionEndpointsForAuthorizationAndStatusCheckApi
 
-All URIs are relative to http://localhost, except if the operation defines another base path.
+All URIs are relative to http://localhost.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**getTransactionStatus()**](TransactionEndpointsForAuthorizationAndStatusCheckApi.md#getTransactionStatus) | **GET** /api/v1/tx/authstatus |  |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getTransactionStatus()**](TransactionEndpointsForAuthorizationAndStatusCheckApi.md#getTransactionStatus) | **GET** /api/v1/tx/authstatus | 
 
 
 ## `getTransactionStatus()`
@@ -51,12 +51,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **merchant_id** | **string**| Merchant Id | |
-| **request** | [**\Gear4music\ElavonPlayground\V1\PMG\Model\GetTransactionStatusRequest**](../Model/.md)| Request object with required information. | |
-| **tx_id** | **string**| Transaction ID, provided by PMG | [optional] |
-| **merchant_tx_id** | **string**| Merchant transaction id | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_id** | **string**| Merchant Id |
+ **request** | [**\Gear4music\ElavonPlayground\V1\PMG\Model\GetTransactionStatusRequest**](../Model/.md)| Request object with required information. |
+ **tx_id** | **string**| Transaction ID, provided by PMG | [optional]
+ **merchant_tx_id** | **string**| Merchant transaction id | [optional]
 
 ### Return type
 

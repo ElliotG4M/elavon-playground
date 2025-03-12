@@ -1,11 +1,11 @@
 # Gear4music\ElavonPlayground\V1\PMG\TransactionRefundEndpointApi
 
-All URIs are relative to http://localhost, except if the operation defines another base path.
+All URIs are relative to http://localhost.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**getRefundStatus()**](TransactionRefundEndpointApi.md#getRefundStatus) | **GET** /api/v1/tx/refundstatus |  |
-| [**refund()**](TransactionRefundEndpointApi.md#refund) | **POST** /api/v1/tx/refund |  |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getRefundStatus()**](TransactionRefundEndpointApi.md#getRefundStatus) | **GET** /api/v1/tx/refundstatus | 
+[**refund()**](TransactionRefundEndpointApi.md#refund) | **POST** /api/v1/tx/refund | 
 
 
 ## `getRefundStatus()`
@@ -52,12 +52,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **merchant_id** | **string**| Merchant Id | |
-| **request** | [**\Gear4music\ElavonPlayground\V1\PMG\Model\GetRefundStatusRequest**](../Model/.md)| Request object with required information. | |
-| **refund_id** | **string**| Refund ID, provided by PMG | [optional] |
-| **merchant_refund_id** | **string**| Merchant refund id | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_id** | **string**| Merchant Id |
+ **request** | [**\Gear4music\ElavonPlayground\V1\PMG\Model\GetRefundStatusRequest**](../Model/.md)| Request object with required information. |
+ **refund_id** | **string**| Refund ID, provided by PMG | [optional]
+ **merchant_refund_id** | **string**| Merchant refund id | [optional]
 
 ### Return type
 
@@ -117,9 +117,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **refund_request** | [**\Gear4music\ElavonPlayground\V1\PMG\Model\RefundRequest**](../Model/RefundRequest.md)|  | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **refund_request** | [**\Gear4music\ElavonPlayground\V1\PMG\Model\RefundRequest**](../Model/RefundRequest.md)|  |
 
 ### Return type
 

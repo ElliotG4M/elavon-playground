@@ -1,10 +1,10 @@
 # Gear4music\ElavonPlayground\V1\PMG\TransactionCancellationEndpointApi
 
-All URIs are relative to http://localhost, except if the operation defines another base path.
+All URIs are relative to http://localhost.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**cancelTransaction()**](TransactionCancellationEndpointApi.md#cancelTransaction) | **POST** /api/v1/tx/cancellation |  |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**cancelTransaction()**](TransactionCancellationEndpointApi.md#cancelTransaction) | **POST** /api/v1/tx/cancellation | 
 
 
 ## `cancelTransaction()`
@@ -42,9 +42,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **cancellation_request** | [**\Gear4music\ElavonPlayground\V1\PMG\Model\CancellationRequest**](../Model/CancellationRequest.md)|  | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cancellation_request** | [**\Gear4music\ElavonPlayground\V1\PMG\Model\CancellationRequest**](../Model/CancellationRequest.md)|  |
 
 ### Return type
 

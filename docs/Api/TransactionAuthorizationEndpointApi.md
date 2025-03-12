@@ -1,10 +1,10 @@
 # Gear4music\ElavonPlayground\V1\PMG\TransactionAuthorizationEndpointApi
 
-All URIs are relative to http://localhost, except if the operation defines another base path.
+All URIs are relative to http://localhost.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**authorizeTransaction()**](TransactionAuthorizationEndpointApi.md#authorizeTransaction) | **POST** /api/v1/tx/authorization |  |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**authorizeTransaction()**](TransactionAuthorizationEndpointApi.md#authorizeTransaction) | **POST** /api/v1/tx/authorization | 
 
 
 ## `authorizeTransaction()`
@@ -48,9 +48,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **authorization_request** | [**\Gear4music\ElavonPlayground\V1\PMG\Model\AuthorizationRequest**](../Model/AuthorizationRequest.md)|  | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization_request** | [**\Gear4music\ElavonPlayground\V1\PMG\Model\AuthorizationRequest**](../Model/AuthorizationRequest.md)|  |
 
 ### Return type
 
