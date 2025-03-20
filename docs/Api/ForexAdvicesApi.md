@@ -1,11 +1,11 @@
 # Gear4music\ElavonPlayground\V1\EPG\ForexAdvicesApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createForexAdvice()**](ForexAdvicesApi.md#createForexAdvice) | **POST** /forex-advices | Create ForexAdvice |
-| [**retrieveForexAdvice()**](ForexAdvicesApi.md#retrieveForexAdvice) | **GET** /forex-advices/{id} | Retrieve ForexAdvice |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createForexAdvice()**](ForexAdvicesApi.md#createForexAdvice) | **POST** /forex-advices | Create ForexAdvice
+[**retrieveForexAdvice()**](ForexAdvicesApi.md#retrieveForexAdvice) | **GET** /forex-advices/{id} | Retrieve ForexAdvice
 
 
 ## `createForexAdvice()`
@@ -52,12 +52,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **forex_advice** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ForexAdvice**](../Model/ForexAdvice.md)|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **forex_advice** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ForexAdvice**](../Model/ForexAdvice.md)|  | [optional]
 
 ### Return type
 
@@ -119,11 +119,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ForexAdvice [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ForexAdvice [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 

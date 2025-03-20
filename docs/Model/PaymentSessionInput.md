@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**expires_at** | **\DateTime** | Expiration timestamp | [optional]
+**expires_at** | [**\DateTime**](\DateTime.md) | Expiration timestamp | [optional]
 **account** | **string** | Account [Resource URL](#section/Overview/Values). Defaults to merchant. | [optional]
 **order** | **string** | Order [Resource URL](#section/Overview/Values) for which payment is being requested |
 **allowed_payment_methods** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PaymentMethod[]**](PaymentMethod.md) | Used to specify the payment methods allowed to be shown in the hosted payments page. | [optional]
 **allowed_payment_method_origins** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PaymentMethodOrigin[]**](PaymentMethodOrigin.md) | The allowed origins of the payment methods listed in the allowedPaymentMethods field. | [optional]
 **payment_link** | **string** | PaymentLink [Resource URL](#section/Overview/Values) | [optional]
-**sales_tax** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\NonNegativeAmountAndCurrency**](NonNegativeAmountAndCurrency.md) | Sales Tax | [optional]
+**sales_tax** | [**NonNegativeAmountAndCurrency**](NonNegativeAmountAndCurrency.md) | Sales Tax | [optional]
 **shopper** | **string** | Shopper [Resource URL](#section/Overview/Values) | [optional]
-**debtor_account** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\DebtorAccount**](DebtorAccount.md) | Account information required for MCC 6012/6050/6051 merchants | [optional]
+**debtor_account** | [**DebtorAccount**](DebtorAccount.md) | Account information required for MCC 6012/6050/6051 merchants | [optional]
 **shopper_email_address** | **string** | Shopper&#39;s email address, useful for fraud detection and to provide a receipt | [optional]
-**bill_to** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Contact**](Contact.md) | Billing contact details that will be used by default for the hosted card | [optional]
-**ship_to** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Contact**](Contact.md) | Shipping contact details | [optional]
-**hpp_type** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\HppType**](HppType.md) | Hosted payments page type indicates the type of hosted payments page for the payment session, defaults to fullPageRedirect | [optional]
+**bill_to** | [**Contact**](Contact.md) | Billing contact details that will be used by default for the hosted card | [optional]
+**ship_to** | [**Contact**](Contact.md) | Shipping contact details | [optional]
+**hpp_type** | [**HppType**](HppType.md) | Hosted payments page type indicates the type of hosted payments page for the payment session, defaults to fullPageRedirect | [optional]
 **return_url** | **string** | URL to redirect to after payment details are collected. |
 **cancel_url** | **string** | URL to redirect to if the shopper cancels |
 **origin_url** | **string** | Origin where the hosted payment page will be embedded. Required if using the lightbox. Multiple origin URLs are allowed. Each URL must be separated by a space and each URL must follow the regex. |

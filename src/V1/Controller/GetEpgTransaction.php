@@ -22,14 +22,28 @@ class GetEpgTransaction extends ExtendedController
             $this->getEnvironment()->getVar('EPG_PASSWORD')
         );
 
-        try {
-            $response = $client->getTransaction(
-                $request->transaction_id
-            );
-        } catch (\Exception $e) {
-            $this->setResponseJson(["error" => $e->getMessage()]);
+        if (!empty($request->transaction_id)) {
+            try {
+                $response = $client->getTransaction(
+                    $request->transaction_id
+                );
+            } catch (\Exception $e) {
+                $this->setResponseJson(["error" => $e->getMessage()]);
+                return;
+            }
+        } else if (!empty($request->session_id)) {
+            try {
+                $session = $client->getSession($request->session_id);
+                $response = $client->getTransaction(substr($session->getTransaction(), strrpos($session->getTransaction(), '/') + 1));
+            } catch (\Exception $e) {
+                $this->setResponseJson(["error" => $e->getMessage()]);
+                return;
+            }
+        } else {
+            $this->setResponseJson(["error" => "Either transaction_id or session_id must be provided"]);
             return;
         }
+
 
         $this->setResponseJson(["transaction" => $response->jsonSerialize()]);
     }

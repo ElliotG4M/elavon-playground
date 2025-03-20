@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tlv_request** | **string** | TLV-formatted string, length must be at least 6 |
-**keys** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\EmvKeys**](EmvKeys.md) | Date information for Emv keys | [optional]
+**keys** | [**EmvKeys**](EmvKeys.md) | Date information for Emv keys | [optional]
 **application_identifier_tag4_f** | **string** | EMV Tag 4F - identifies the application as described in [ISO 7816-5] | [optional] [readonly]
 **application_label_tag50** | **string** | EMV Tag 50 - this tag typically contains a label or name associated with the card application | [optional] [readonly]
 **issuer_script_template_one_tag71** | **string** | EMV Tag 71 - value returned from authorization | [optional] [readonly]

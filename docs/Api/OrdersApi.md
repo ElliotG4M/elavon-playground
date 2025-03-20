@@ -1,13 +1,13 @@
 # Gear4music\ElavonPlayground\V1\EPG\OrdersApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createOrder()**](OrdersApi.md#createOrder) | **POST** /orders | Create Order |
-| [**retrieveOrder()**](OrdersApi.md#retrieveOrder) | **GET** /orders/{id} | Retrieve Order |
-| [**retrieveOrders()**](OrdersApi.md#retrieveOrders) | **GET** /orders | Retrieve Orders |
-| [**updateOrder()**](OrdersApi.md#updateOrder) | **POST** /orders/{id} | Update Order |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createOrder()**](OrdersApi.md#createOrder) | **POST** /orders | Create Order
+[**retrieveOrder()**](OrdersApi.md#retrieveOrder) | **GET** /orders/{id} | Retrieve Order
+[**retrieveOrders()**](OrdersApi.md#retrieveOrders) | **GET** /orders | Retrieve Orders
+[**updateOrder()**](OrdersApi.md#updateOrder) | **POST** /orders/{id} | Update Order
 
 
 ## `createOrder()`
@@ -54,12 +54,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **order_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\OrderInput**](../Model/OrderInput.md)| object (Order) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **order_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\OrderInput**](../Model/OrderInput.md)| object (Order) | [optional]
 
 ### Return type
 
@@ -121,11 +121,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Order [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -188,12 +188,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional] |
-| **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10] |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional]
+ **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10]
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -257,13 +257,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Order [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **order** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Order**](../Model/Order.md)| object (Order) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **order** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Order**](../Model/Order.md)| object (Order) | [optional]
 
 ### Return type
 

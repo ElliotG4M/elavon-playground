@@ -1,14 +1,14 @@
 # Gear4music\ElavonPlayground\V1\EPG\TransactionsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createEmailReceiptRequest()**](TransactionsApi.md#createEmailReceiptRequest) | **POST** /transactions/{id}/email-receipt-requests | Create email receipt request |
-| [**createTransaction()**](TransactionsApi.md#createTransaction) | **POST** /transactions | Create Transaction |
-| [**retrieveTransaction()**](TransactionsApi.md#retrieveTransaction) | **GET** /transactions/{id} | Retrieve Transaction |
-| [**retrieveTransactions()**](TransactionsApi.md#retrieveTransactions) | **GET** /transactions | Retrieve Transactions |
-| [**updateTransaction()**](TransactionsApi.md#updateTransaction) | **POST** /transactions/{id} | Update Transaction |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createEmailReceiptRequest()**](TransactionsApi.md#createEmailReceiptRequest) | **POST** /transactions/{id}/email-receipt-requests | Create email receipt request
+[**createTransaction()**](TransactionsApi.md#createTransaction) | **POST** /transactions | Create Transaction
+[**retrieveTransaction()**](TransactionsApi.md#retrieveTransaction) | **GET** /transactions/{id} | Retrieve Transaction
+[**retrieveTransactions()**](TransactionsApi.md#retrieveTransactions) | **GET** /transactions | Retrieve Transactions
+[**updateTransaction()**](TransactionsApi.md#updateTransaction) | **POST** /transactions/{id} | Update Transaction
 
 
 ## `createEmailReceiptRequest()`
@@ -55,12 +55,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **email_receipt_request** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\EmailReceiptRequest**](../Model/EmailReceiptRequest.md)| object (Transaction) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email_receipt_request** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\EmailReceiptRequest**](../Model/EmailReceiptRequest.md)| object (Transaction) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
 
 ### Return type
 
@@ -123,12 +123,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transaction_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\TransactionInput**](../Model/TransactionInput.md)| object (Transaction) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transaction_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\TransactionInput**](../Model/TransactionInput.md)| object (Transaction) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
 
 ### Return type
 
@@ -190,11 +190,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Transaction [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Transaction [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -258,13 +258,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10] |
-| **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional] |
-| **query_params** | [**string[]**](../Model/string.md)| Query parameters used to filter the returned results. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10]
+ **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional]
+ **query_params** | [**string[]**](../Model/string.md)| Query parameters used to filter the returned results. | [optional]
 
 ### Return type
 
@@ -328,13 +328,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Transaction [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **transaction** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Transaction**](../Model/Transaction.md)| object (Transaction) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Transaction [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **transaction** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Transaction**](../Model/Transaction.md)| object (Transaction) | [optional]
 
 ### Return type
 

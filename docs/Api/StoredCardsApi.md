@@ -1,13 +1,13 @@
 # Gear4music\ElavonPlayground\V1\EPG\StoredCardsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createStoredCard()**](StoredCardsApi.md#createStoredCard) | **POST** /stored-cards | Create StoredCard |
-| [**deleteStoredCard()**](StoredCardsApi.md#deleteStoredCard) | **DELETE** /stored-cards/{id} | Delete StoredCard |
-| [**retrieveStoredCard()**](StoredCardsApi.md#retrieveStoredCard) | **GET** /stored-cards/{id} | Retrieve StoredCard |
-| [**updateStoredCard()**](StoredCardsApi.md#updateStoredCard) | **POST** /stored-cards/{id} | Update StoredCard |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createStoredCard()**](StoredCardsApi.md#createStoredCard) | **POST** /stored-cards | Create StoredCard
+[**deleteStoredCard()**](StoredCardsApi.md#deleteStoredCard) | **DELETE** /stored-cards/{id} | Delete StoredCard
+[**retrieveStoredCard()**](StoredCardsApi.md#retrieveStoredCard) | **GET** /stored-cards/{id} | Retrieve StoredCard
+[**updateStoredCard()**](StoredCardsApi.md#updateStoredCard) | **POST** /stored-cards/{id} | Update StoredCard
 
 
 ## `createStoredCard()`
@@ -54,12 +54,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **stored_card_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\StoredCardInput**](../Model/StoredCardInput.md)| object (StoredCard) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stored_card_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\StoredCardInput**](../Model/StoredCardInput.md)| object (StoredCard) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
 
 ### Return type
 
@@ -118,9 +118,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| StoredCard [Resource ID](#section/Overview/Values) | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| StoredCard [Resource ID](#section/Overview/Values) |
 
 ### Return type
 
@@ -182,11 +182,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| StoredCard [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| StoredCard [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -250,13 +250,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| StoredCard [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **stored_card** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\StoredCard**](../Model/StoredCard.md)| object (StoredCard) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| StoredCard [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **stored_card** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\StoredCard**](../Model/StoredCard.md)| object (StoredCard) | [optional]
 
 ### Return type
 

@@ -1,11 +1,11 @@
 # Gear4music\ElavonPlayground\V1\EPG\BatchesApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**retrieveBatch()**](BatchesApi.md#retrieveBatch) | **GET** /batches/{id} | Retrieve Batch |
-| [**retrieveBatches()**](BatchesApi.md#retrieveBatches) | **GET** /batches | Retrieve Batches |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**retrieveBatch()**](BatchesApi.md#retrieveBatch) | **GET** /batches/{id} | Retrieve Batch
+[**retrieveBatches()**](BatchesApi.md#retrieveBatches) | **GET** /batches | Retrieve Batches
 
 
 ## `retrieveBatch()`
@@ -51,11 +51,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Batch [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Batch [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -118,12 +118,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional] |
-| **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional]
+ **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10]
 
 ### Return type
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**source** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Source**](Source.md) |  | [optional]
+**source** | [**Source**](Source.md) |  | [optional]
 **processor_account** | **string** | ProcessorAccount [Resource URL](#section/Overview/Values) | [optional]
 **account** | **string** | Account [Resource URL](#section/Overview/Values). Defaults to merchant. | [optional]
-**sales_tax** | **object** | Sales Tax | [optional]
+**sales_tax** | [**NonNegativeAmountAndCurrency**](NonNegativeAmountAndCurrency.md) | Sales Tax | [optional]
 **parent_transaction** | **string** | Transaction [Resource URL](#section/Overview/Values) of the parent Transaction |
 **description** | **string** | Description, which appears on the dashboard and might appear on receipts | [optional]
 **custom_reference** | **string** | Optional reference provided by the merchant | [optional]

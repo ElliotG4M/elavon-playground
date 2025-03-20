@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**source** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Source**](Source.md) |  | [optional]
+**source** | [**Source**](Source.md) |  | [optional]
 **processor_account** | **string** | ProcessorAccount [Resource URL](#section/Overview/Values) | [optional]
 **account** | **string** | Account [Resource URL](#section/Overview/Values). Defaults to merchant. | [optional]
-**total** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PositiveAmountAndCurrency**](PositiveAmountAndCurrency.md) | Transaction total | [optional]
-**sales_tax** | **object** | Sales Tax | [optional]
+**total** | [**PositiveAmountAndCurrency**](PositiveAmountAndCurrency.md) | Transaction total | [optional]
+**sales_tax** | [**NonNegativeAmountAndCurrency**](NonNegativeAmountAndCurrency.md) | Sales Tax | [optional]
 **refund_surcharge_advice** | **string** | Refund Surcharge Advice [Resource URL](#section/Overview/Values) obtained through the create refundSurchargeAdvice API call. | [optional]
 **parent_transaction** | **string** | Transaction [Resource URL](#section/Overview/Values) of the parent Transaction |
 **description** | **string** | Description, which appears on the dashboard and might appear on receipts | [optional]
-**shopper_statement** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ShopperStatement**](ShopperStatement.md) | Dynamic overrides of what might appear on a shopper&#39;s statement | [optional]
+**shopper_statement** | [**ShopperStatement**](ShopperStatement.md) | Dynamic overrides of what might appear on a shopper&#39;s statement | [optional]
 **custom_reference** | **string** | Optional reference provided by the merchant | [optional]
 **shopper_reference** | **string** | Optional reference provided by the shopper, such as a purchase order | [optional]
 **shopper_interaction** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ShopperInteraction**](ShopperInteraction.md) |  | [optional]

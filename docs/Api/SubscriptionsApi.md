@@ -1,13 +1,13 @@
 # Gear4music\ElavonPlayground\V1\EPG\SubscriptionsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createSubscription()**](SubscriptionsApi.md#createSubscription) | **POST** /subscriptions | Create Subscription |
-| [**retrieveSubscription()**](SubscriptionsApi.md#retrieveSubscription) | **GET** /subscriptions/{id} | Retrieve Subscription |
-| [**retrieveSubscriptions()**](SubscriptionsApi.md#retrieveSubscriptions) | **GET** /subscriptions | Retrieve Subscriptions |
-| [**updateSubscription()**](SubscriptionsApi.md#updateSubscription) | **POST** /subscriptions/{id} | Update Subscription |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createSubscription()**](SubscriptionsApi.md#createSubscription) | **POST** /subscriptions | Create Subscription
+[**retrieveSubscription()**](SubscriptionsApi.md#retrieveSubscription) | **GET** /subscriptions/{id} | Retrieve Subscription
+[**retrieveSubscriptions()**](SubscriptionsApi.md#retrieveSubscriptions) | **GET** /subscriptions | Retrieve Subscriptions
+[**updateSubscription()**](SubscriptionsApi.md#updateSubscription) | **POST** /subscriptions/{id} | Update Subscription
 
 
 ## `createSubscription()`
@@ -54,12 +54,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **subscription_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\SubscriptionInput**](../Model/SubscriptionInput.md)| object (Subscription) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\SubscriptionInput**](../Model/SubscriptionInput.md)| object (Subscription) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
 
 ### Return type
 
@@ -121,11 +121,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Subscription [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Subscription [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -188,12 +188,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional] |
-| **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional]
+ **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -257,13 +257,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Subscription [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **subscription** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Subscription**](../Model/Subscription.md)| object (Subscription) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Subscription [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **subscription** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Subscription**](../Model/Subscription.md)| object (Subscription) | [optional]
 
 ### Return type
 

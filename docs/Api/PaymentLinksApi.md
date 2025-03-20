@@ -1,14 +1,14 @@
 # Gear4music\ElavonPlayground\V1\EPG\PaymentLinksApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createPaymentLink()**](PaymentLinksApi.md#createPaymentLink) | **POST** /payment-links | Create PaymentLink |
-| [**retrievePaymentLink()**](PaymentLinksApi.md#retrievePaymentLink) | **GET** /payment-links/{id} | Retrieve PaymentLink |
-| [**retrievePaymentLinks()**](PaymentLinksApi.md#retrievePaymentLinks) | **GET** /payment-links | Retrieve PaymentLinks |
-| [**retrievePaymentLinksPaymentLinkEvents()**](PaymentLinksApi.md#retrievePaymentLinksPaymentLinkEvents) | **GET** /payment-links/{id}/payment-link-events | Retrieve PaymentLinks PaymentLinkEvents |
-| [**updatePaymentLink()**](PaymentLinksApi.md#updatePaymentLink) | **POST** /payment-links/{id} | Update PaymentLink |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createPaymentLink()**](PaymentLinksApi.md#createPaymentLink) | **POST** /payment-links | Create PaymentLink
+[**retrievePaymentLink()**](PaymentLinksApi.md#retrievePaymentLink) | **GET** /payment-links/{id} | Retrieve PaymentLink
+[**retrievePaymentLinks()**](PaymentLinksApi.md#retrievePaymentLinks) | **GET** /payment-links | Retrieve PaymentLinks
+[**retrievePaymentLinksPaymentLinkEvents()**](PaymentLinksApi.md#retrievePaymentLinksPaymentLinkEvents) | **GET** /payment-links/{id}/payment-link-events | Retrieve PaymentLinks PaymentLinkEvents
+[**updatePaymentLink()**](PaymentLinksApi.md#updatePaymentLink) | **POST** /payment-links/{id} | Update PaymentLink
 
 
 ## `createPaymentLink()`
@@ -55,12 +55,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **payment_link_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PaymentLinkInput**](../Model/PaymentLinkInput.md)|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **payment_link_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PaymentLinkInput**](../Model/PaymentLinkInput.md)|  | [optional]
 
 ### Return type
 
@@ -122,11 +122,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| PaymentLink [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| PaymentLink [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -189,12 +189,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional] |
-| **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional]
+ **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -258,13 +258,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| PaymentLink [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional] |
-| **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| PaymentLink [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional]
+ **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -328,13 +328,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| PaymentLink [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **payment_link** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PaymentLink**](../Model/PaymentLink.md)|  | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| PaymentLink [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **payment_link** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PaymentLink**](../Model/PaymentLink.md)|  | [optional]
 
 ### Return type
 

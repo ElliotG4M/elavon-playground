@@ -1,11 +1,11 @@
 # Gear4music\ElavonPlayground\V1\EPG\HsmCardsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createHsmCard()**](HsmCardsApi.md#createHsmCard) | **POST** /hsm-cards | Create HsmCard |
-| [**retrieveHsmCard()**](HsmCardsApi.md#retrieveHsmCard) | **GET** /hsm-cards/{id} | Retrieve HsmCard |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createHsmCard()**](HsmCardsApi.md#createHsmCard) | **POST** /hsm-cards | Create HsmCard
+[**retrieveHsmCard()**](HsmCardsApi.md#retrieveHsmCard) | **GET** /hsm-cards/{id} | Retrieve HsmCard
 
 
 ## `createHsmCard()`
@@ -52,12 +52,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **hsm_card** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\HsmCard**](../Model/HsmCard.md)| object (HsmCard) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **hsm_card** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\HsmCard**](../Model/HsmCard.md)| object (HsmCard) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
 
 ### Return type
 
@@ -119,11 +119,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| HsmCard [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| HsmCard [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 

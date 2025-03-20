@@ -1,11 +1,11 @@
 # Gear4music\ElavonPlayground\V1\EPG\PlanListsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**retrievePlanList()**](PlanListsApi.md#retrievePlanList) | **GET** /plan-lists/{id} | Retrieve PlanList |
-| [**retrievePlanLists()**](PlanListsApi.md#retrievePlanLists) | **GET** /plan-lists | Retrieve PlanLists |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**retrievePlanList()**](PlanListsApi.md#retrievePlanList) | **GET** /plan-lists/{id} | Retrieve PlanList
+[**retrievePlanLists()**](PlanListsApi.md#retrievePlanLists) | **GET** /plan-lists | Retrieve PlanLists
 
 
 ## `retrievePlanList()`
@@ -49,11 +49,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| PlanList [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| PlanList [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -114,12 +114,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional] |
-| **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional]
+ **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10]
 
 ### Return type
 

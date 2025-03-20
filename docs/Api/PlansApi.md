@@ -1,14 +1,14 @@
 # Gear4music\ElavonPlayground\V1\EPG\PlansApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createPlan()**](PlansApi.md#createPlan) | **POST** /plans | Create Plan |
-| [**deletePlan()**](PlansApi.md#deletePlan) | **DELETE** /plans/{id} | Delete Plan |
-| [**retrievePlan()**](PlansApi.md#retrievePlan) | **GET** /plans/{id} | Retrieve Plan |
-| [**retrievePlans()**](PlansApi.md#retrievePlans) | **GET** /plans | Retrieve Plans |
-| [**updatePlan()**](PlansApi.md#updatePlan) | **POST** /plans/{id} | Update Plan |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createPlan()**](PlansApi.md#createPlan) | **POST** /plans | Create Plan
+[**deletePlan()**](PlansApi.md#deletePlan) | **DELETE** /plans/{id} | Delete Plan
+[**retrievePlan()**](PlansApi.md#retrievePlan) | **GET** /plans/{id} | Retrieve Plan
+[**retrievePlans()**](PlansApi.md#retrievePlans) | **GET** /plans | Retrieve Plans
+[**updatePlan()**](PlansApi.md#updatePlan) | **POST** /plans/{id} | Update Plan
 
 
 ## `createPlan()`
@@ -55,12 +55,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **plan_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PlanInput**](../Model/PlanInput.md)| object (Plan) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **plan_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PlanInput**](../Model/PlanInput.md)| object (Plan) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
 
 ### Return type
 
@@ -119,9 +119,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Plan [Resource ID](#section/Overview/Values) | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Plan [Resource ID](#section/Overview/Values) |
 
 ### Return type
 
@@ -183,11 +183,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Plan [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Plan [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -250,12 +250,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional] |
-| **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional]
+ **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -319,13 +319,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Plan [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **plan** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Plan**](../Model/Plan.md)| object (Plan) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Plan [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **plan** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Plan**](../Model/Plan.md)| object (Plan) | [optional]
 
 ### Return type
 

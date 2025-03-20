@@ -123,16 +123,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.17.0",
+            "version": "2.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "075bc0c26631110584175de6523ab3f1652eb28e"
+                "reference": "a7de6c3c6c3c022f5cfc337f8ede6a14460cf77e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/075bc0c26631110584175de6523ab3f1652eb28e",
-                "reference": "075bc0c26631110584175de6523ab3f1652eb28e",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/a7de6c3c6c3c022f5cfc337f8ede6a14460cf77e",
+                "reference": "a7de6c3c6c3c022f5cfc337f8ede6a14460cf77e",
                 "shasum": ""
             },
             "require": {
@@ -182,7 +182,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.17.0"
+                "source": "https://github.com/filp/whoops/tree/2.18.0"
             },
             "funding": [
                 {
@@ -190,7 +190,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-25T12:00:00+00:00"
+            "time": "2025-03-15T12:00:00+00:00"
         },
         {
             "name": "gear4music/constants",
@@ -262,22 +262,22 @@
         },
         {
             "name": "gear4music/error-handler",
-            "version": "v3.3.0",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Gear4music/error-handler.git",
-                "reference": "21582a1537b811e2951bc9d6282755cfb2fc9086"
+                "reference": "9c90dbb6828778d4da6617dabade9e09d75a6071"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://g4m:8Fq0GYevp4efCUK1u5ff5e5iQcvvHCWE@satis.g4mapp.com/repo/dist/gear4music/error-handler/gear4music-error-handler-21582a1537b811e2951bc9d6282755cfb2fc9086-zip-8fe9ab.zip",
-                "reference": "21582a1537b811e2951bc9d6282755cfb2fc9086",
-                "shasum": "96bf7d8876c33fff26aff60fdeb81638c8f4ff6e"
+                "url": "https://g4m:8Fq0GYevp4efCUK1u5ff5e5iQcvvHCWE@satis.g4mapp.com/repo/dist/gear4music/error-handler/gear4music-error-handler-9c90dbb6828778d4da6617dabade9e09d75a6071-zip-10050c.zip",
+                "reference": "9c90dbb6828778d4da6617dabade9e09d75a6071",
+                "shasum": "c183293c18e8ee3d26ec99b72f2c38fa656503b8"
             },
             "require": {
                 "dancryer/whoops-stackdriver": "^v1.0.4",
-                "monolog/monolog": "^1|^2",
-                "php": "^8.0|^8.3"
+                "monolog/monolog": "^1|^2|^3",
+                "php": "^7.3|^7.4|^8.0|^8.1|^8.2|^8.3"
             },
             "require-dev": {
                 "phpstan/phpstan": "^1.4",
@@ -306,30 +306,29 @@
             ],
             "description": "Utilities for properly handling, logging and reporting on exceptions and errors.",
             "support": {
-                "source": "https://github.com/Gear4music/error-handler/tree/v3.3.0",
+                "source": "https://github.com/Gear4music/error-handler/tree/v3.4.0",
                 "issues": "https://github.com/Gear4music/error-handler/issues"
             },
-            "time": "2024-10-23T14:31:56+00:00"
+            "time": "2025-03-13T09:56:26+00:00"
         },
         {
             "name": "gear4music/log-formatter",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Gear4music/log-formatter.git",
-                "reference": "413a63494c709a4ddb3b9a9a2ea39919dddd58d2"
+                "reference": "36b2ae462dc5a5f42da56d27e6463d5e7a8c7ba5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://g4m:8Fq0GYevp4efCUK1u5ff5e5iQcvvHCWE@satis.g4mapp.com/repo/dist/gear4music/log-formatter/gear4music-log-formatter-413a63494c709a4ddb3b9a9a2ea39919dddd58d2-zip-bff744.zip",
-                "reference": "413a63494c709a4ddb3b9a9a2ea39919dddd58d2",
-                "shasum": "39a9a3fe8485a2ab2b5f8740656e7ce4cf7efa2d"
+                "url": "https://g4m:8Fq0GYevp4efCUK1u5ff5e5iQcvvHCWE@satis.g4mapp.com/repo/dist/gear4music/log-formatter/gear4music-log-formatter-36b2ae462dc5a5f42da56d27e6463d5e7a8c7ba5-zip-e6b0ea.zip",
+                "reference": "36b2ae462dc5a5f42da56d27e6463d5e7a8c7ba5",
+                "shasum": "1bdbc4f180b9886dc89c1f6ed58bbb1444a90a01"
             },
             "require": {
-                "monolog/monolog": "^1|^2"
+                "monolog/monolog": "^1|^2|^3"
             },
             "require-dev": {
-                "gear4music/ci": "v1.*",
                 "gear4music/phpcs-rules": "1.0",
                 "overtrue/phplint": "^1.0",
                 "phpstan/phpstan": "^1.5",
@@ -376,10 +375,10 @@
             ],
             "description": "A Monolog Log Formatter For Google Cloud",
             "support": {
-                "source": "https://github.com/Gear4music/log-formatter/tree/v1.2.0",
+                "source": "https://github.com/Gear4music/log-formatter/tree/v1.3.0",
                 "issues": "https://github.com/Gear4music/log-formatter/issues"
             },
-            "time": "2022-04-20T14:06:59+00:00"
+            "time": "2025-03-13T09:58:30+00:00"
         },
         {
             "name": "gear4music/oauth2-public-key",
@@ -524,21 +523,21 @@
         },
         {
             "name": "gear4music/php-japi",
-            "version": "v4.2.1",
+            "version": "v4.3.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Gear4music/php-japi.git",
-                "reference": "496cfb7bd3f893914f327824be1d9e4425c0fff9"
+                "reference": "a474ed994675510a62bf7910d812cc098fc0154a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://g4m:8Fq0GYevp4efCUK1u5ff5e5iQcvvHCWE@satis.g4mapp.com/repo/dist/gear4music/php-japi/gear4music-php-japi-496cfb7bd3f893914f327824be1d9e4425c0fff9-zip-697b99.zip",
-                "reference": "496cfb7bd3f893914f327824be1d9e4425c0fff9",
-                "shasum": "85dc742ed412313c3f10f55a13fd93e9b369bb5d"
+                "url": "https://g4m:8Fq0GYevp4efCUK1u5ff5e5iQcvvHCWE@satis.g4mapp.com/repo/dist/gear4music/php-japi/gear4music-php-japi-a474ed994675510a62bf7910d812cc098fc0154a-zip-c3ce70.zip",
+                "reference": "a474ed994675510a62bf7910d812cc098fc0154a",
+                "shasum": "29fc142d4cca34eae2d54d2503d62634a65bf1c6"
             },
             "require": {
                 "ext-json": "*",
-                "gear4music/error-handler": "^3.1",
+                "gear4music/error-handler": "v3.4.0",
                 "guzzlehttp/psr7": "^1.7 | ^2.0",
                 "php": "^7.3 | ^8.0",
                 "psr/http-message": "^1.0",
@@ -581,33 +580,33 @@
                 "json"
             ],
             "support": {
-                "source": "https://github.com/Gear4music/php-japi/tree/v4.2.1",
+                "source": "https://github.com/Gear4music/php-japi/tree/v4.3.0",
                 "issues": "https://github.com/Gear4music/php-japi/issues"
             },
-            "time": "2025-02-17T11:59:04+00:00"
+            "time": "2025-03-13T11:47:46+00:00"
         },
         {
             "name": "gear4music/php-japi-extended",
-            "version": "v4.2.0",
+            "version": "v4.3.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Gear4music/php-japi-extended.git",
-                "reference": "5431ee750f325ae3947f966a51241e0afd7b8ad6"
+                "reference": "6a9d3e7d34b8cc0a79a7b891d0756c6dd03370d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://g4m:8Fq0GYevp4efCUK1u5ff5e5iQcvvHCWE@satis.g4mapp.com/repo/dist/gear4music/php-japi-extended/gear4music-php-japi-extended-5431ee750f325ae3947f966a51241e0afd7b8ad6-zip-ae15eb.zip",
-                "reference": "5431ee750f325ae3947f966a51241e0afd7b8ad6",
-                "shasum": "c38fafb2b7d88024861ccd49ac6e9f0120fdd4cd"
+                "url": "https://g4m:8Fq0GYevp4efCUK1u5ff5e5iQcvvHCWE@satis.g4mapp.com/repo/dist/gear4music/php-japi-extended/gear4music-php-japi-extended-6a9d3e7d34b8cc0a79a7b891d0756c6dd03370d7-zip-bc9fbf.zip",
+                "reference": "6a9d3e7d34b8cc0a79a7b891d0756c6dd03370d7",
+                "shasum": "26ad3cc8766582e8240a9836801bcb30ee80b840"
             },
             "require": {
                 "gear4music/constants": "^1.1.0",
                 "gear4music/environment": "v1.3.*",
-                "gear4music/log-formatter": "^v1.2",
+                "gear4music/log-formatter": "v1.3.0",
                 "gear4music/oauth2-validator": "v2.1.0",
-                "gear4music/php-japi": "^v4.2.1",
+                "gear4music/php-japi": "v4.3.0",
                 "gear4music/php-japi-json-schema": "^v1.2.0",
-                "monolog/monolog": "^v1 | ^v2",
+                "monolog/monolog": "^v1 | ^v2 | ^v3",
                 "php": "7.4.*|8.0.*|8.1.*|8.2.*|8.3.*|8.4.*",
                 "ralouphie/getallheaders": "^v2.0 | ^3.0",
                 "rdlowrey/auryn": "v1.4.*"
@@ -673,10 +672,10 @@
             ],
             "description": "A more prescriptive way to build JSON APIs",
             "support": {
-                "source": "https://github.com/Gear4music/php-japi-extended/tree/v4.2.0",
+                "source": "https://github.com/Gear4music/php-japi-extended/tree/v4.3.0",
                 "issues": "https://github.com/Gear4music/php-japi-extended/issues"
             },
-            "time": "2025-02-17T12:52:31+00:00"
+            "time": "2025-03-13T13:04:42+00:00"
         },
         {
             "name": "gear4music/php-japi-json-schema",
@@ -1227,20 +1226,20 @@
         },
         {
             "name": "league/event",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/event.git",
-                "reference": "d2cc124cf9a3fab2bb4ff963307f60361ce4d119"
+                "reference": "062ebb450efbe9a09bc2478e89b7c933875b0935"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/event/zipball/d2cc124cf9a3fab2bb4ff963307f60361ce4d119",
-                "reference": "d2cc124cf9a3fab2bb4ff963307f60361ce4d119",
+                "url": "https://api.github.com/repos/thephpleague/event/zipball/062ebb450efbe9a09bc2478e89b7c933875b0935",
+                "reference": "062ebb450efbe9a09bc2478e89b7c933875b0935",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=7.1.0"
             },
             "require-dev": {
                 "henrikbjorn/phpspec-code-coverage": "~1.0.1",
@@ -1275,9 +1274,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/event/issues",
-                "source": "https://github.com/thephpleague/event/tree/master"
+                "source": "https://github.com/thephpleague/event/tree/2.3.0"
             },
-            "time": "2018-11-26T11:52:41+00:00"
+            "time": "2025-03-14T19:51:10+00:00"
         },
         {
             "name": "league/oauth2-server",
@@ -1543,42 +1542,43 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.10.0",
+            "version": "3.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "5cf826f2991858b54d5c3809bee745560a1042a7"
+                "reference": "aef6ee73a77a66e404dd6540934a9ef1b3c855b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5cf826f2991858b54d5c3809bee745560a1042a7",
-                "reference": "5cf826f2991858b54d5c3809bee745560a1042a7",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/aef6ee73a77a66e404dd6540934a9ef1b3c855b4",
+                "reference": "aef6ee73a77a66e404dd6540934a9ef1b3c855b4",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2",
-                "psr/log": "^1.0.1 || ^2.0 || ^3.0"
+                "php": ">=8.1",
+                "psr/log": "^2.0 || ^3.0"
             },
             "provide": {
-                "psr/log-implementation": "1.0.0 || 2.0.0 || 3.0.0"
+                "psr/log-implementation": "3.0.0"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+                "aws/aws-sdk-php": "^3.0",
                 "doctrine/couchdb": "~1.0@dev",
                 "elasticsearch/elasticsearch": "^7 || ^8",
                 "ext-json": "*",
-                "graylog2/gelf-php": "^1.4.2 || ^2@dev",
-                "guzzlehttp/guzzle": "^7.4",
+                "graylog2/gelf-php": "^1.4.2 || ^2.0",
+                "guzzlehttp/guzzle": "^7.4.5",
                 "guzzlehttp/psr7": "^2.2",
                 "mongodb/mongodb": "^1.8",
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
-                "phpspec/prophecy": "^1.15",
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^8.5.38 || ^9.6.19",
-                "predis/predis": "^1.1 || ^2.0",
-                "rollbar/rollbar": "^1.3 || ^2 || ^3",
-                "ruflin/elastica": "^7",
-                "swiftmailer/swiftmailer": "^5.3|^6.0",
+                "php-console/php-console": "^3.1.8",
+                "phpstan/phpstan": "^2",
+                "phpstan/phpstan-deprecation-rules": "^2",
+                "phpstan/phpstan-strict-rules": "^2",
+                "phpunit/phpunit": "^10.5.17 || ^11.0.7",
+                "predis/predis": "^1.1 || ^2",
+                "rollbar/rollbar": "^4.0",
+                "ruflin/elastica": "^7 || ^8",
                 "symfony/mailer": "^5.4 || ^6",
                 "symfony/mime": "^5.4 || ^6"
             },
@@ -1601,7 +1601,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.x-dev"
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
@@ -1629,7 +1629,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.10.0"
+                "source": "https://github.com/Seldaek/monolog/tree/3.8.1"
             },
             "funding": [
                 {
@@ -1641,7 +1641,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-12T12:43:37+00:00"
+            "time": "2024-12-05T17:15:07+00:00"
         },
         {
             "name": "paragonie/random_compat",

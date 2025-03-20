@@ -1,10 +1,10 @@
 # Gear4music\ElavonPlayground\V1\EPG\MerchantsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**retrieveMerchant()**](MerchantsApi.md#retrieveMerchant) | **GET** /merchants/{id} | Retrieve Merchant |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**retrieveMerchant()**](MerchantsApi.md#retrieveMerchant) | **GET** /merchants/{id} | Retrieve Merchant
 
 
 ## `retrieveMerchant()`
@@ -50,11 +50,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Merchant [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Merchant [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 

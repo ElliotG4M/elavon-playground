@@ -1,10 +1,10 @@
 # Gear4music\ElavonPlayground\V1\EPG\PanTokensApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createPanTokens()**](PanTokensApi.md#createPanTokens) | **POST** /pan-tokens | Create PanTokens |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createPanTokens()**](PanTokensApi.md#createPanTokens) | **POST** /pan-tokens | Create PanTokens
 
 
 ## `createPanTokens()`
@@ -51,12 +51,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **list_of_pan_tokens** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ListOfPanTokens**](../Model/ListOfPanTokens.md)| object (ListOfPanTokens) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list_of_pan_tokens** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ListOfPanTokens**](../Model/ListOfPanTokens.md)| object (ListOfPanTokens) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
 
 ### Return type
 

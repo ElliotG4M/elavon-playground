@@ -27,16 +27,33 @@
     }
 </style>
 
+<script src="https://uat.hpp.converge.eu.elavonaws.com/client/library.js"></script>
+
 <script>
-    const createEpgTransaction = async (amount, orderNumber, shopperUrl, blikCode, email = '') => {
-        console.log(amount);
-        const response = await fetch('http://localhost:8080/v1/create-epg-transaction', {
+    const MessageTypes = window.ElavonLightbox.MessageTypes;
+
+    const submitData = async (data) => {
+        // send data to your server
+        console.log(data);
+        const response = await fetch('http://localhost:8080/v1/get-epg-transaction', {
+            method: 'POST',
+            body: JSON.stringify({
+                session_id: data.sessionId,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const responseJson = await response.json();
+        document.getElementById('result').innerHTML = JSON.stringify(responseJson, null, 4);
+    };
+
+    const createEpgTransaction = async (amount, orderNumber, email = '') => {
+        const response = await fetch('http://localhost:8080/v1/create-epg-order-and-session', {
             method: 'POST',
             body: JSON.stringify({
                 amount: amount,
                 order_number: orderNumber,
-                shopper_url: shopperUrl,
-                blik_code: blikCode,
                 email: email
             }),
             headers: {
@@ -45,13 +62,39 @@
         });
         const responseJson = await response.json();
         document.getElementById('result').innerHTML = JSON.stringify(responseJson, null, 4);
+        let lightbox;
+        console.log(responseJson);
+        const sessionId = responseJson.session.id;
+        console.log(sessionId);
+        if (!lightbox) {
+            lightbox = new window.ElavonLightbox({
+                sessionId: sessionId,
+                onReady: (error) =>
+                    error
+                        ? console.error('Lightbox failed to load')
+                        : lightbox.show(),
+                messageHandler: (message, defaultAction) => {
+                    switch (message.type) {
+                        case MessageTypes.transactionCreated:
+                            submitData({
+                                sessionId: message.sessionId,
+                            });
+                            break;
+                    }
+                    defaultAction();
+                },
+            });
+        } else {
+            lightbox.show();
+        }
     }
 
-    const getEpgTransaction = async (transactionId) => {
+    const getEpgTransaction = async (transactionId, sessionId) => {
         const response = await fetch('http://localhost:8080/v1/get-epg-transaction', {
             method: 'POST',
             body: JSON.stringify({
-                transaction_id: transactionId,
+                transaction_id: transactionId ?? null,
+                session_id: sessionId?? null
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -61,7 +104,7 @@
         document.getElementById('result').innerHTML = JSON.stringify(responseJson, null, 4);
     }
 
-    const createPmgTransaction = async (amount, orderNumber, paymentMethod, currencyCode, countryCode, tradingBrand, redirectUrl, pushStatusUrl) => {
+    const createPmgTransaction = async (amount, orderNumber, paymentMethod, currencyCode, countryCode, tradingBrand, redirectUrl) => {
         const response = await fetch('http://localhost:8080/v1/create-pmg-transaction', {
             method: 'POST',
             body: JSON.stringify({
@@ -71,8 +114,7 @@
                 currency_code: currencyCode,
                 country_code: countryCode,
                 trading_brand: tradingBrand,
-                redirect_url: redirectUrl,
-                push_status_url: pushStatusUrl
+                redirect_url: redirectUrl
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -112,18 +154,12 @@
             <input id="epg-amount" type="text" value="" class="formItem"/>
             <label for="epg-order-number">Order Number</label>
             <input id="epg-order-number" type="text" value="" class="formItem"/>
-            <label for="epg-shopper-url">Shopper URL</label>
-            <input id="epg-shopper-url" type="text" value="" class="formItem"/>
-            <label for="epg-blik-code">BLIK Code</label>
-            <input id="epg-blik-code" type="text" value="" class="formItem"/>
             <label for="epg-email">Customer Email</label>
             <input id="epg-email" type="text" value="" class="formItem"/>
 
             <button class="formItem" onclick="createEpgTransaction(
                 parseFloat(document.getElementById('epg-amount').value),
                 document.getElementById('epg-order-number').value,
-                document.getElementById('epg-shopper-url').value,
-                document.getElementById('epg-blik-code').value,
                 document.getElementById('epg-email').value
             )">
                 Make Payment
@@ -136,8 +172,12 @@
             <label for="epg-transaction-id">Transaction ID</label>
             <input id="epg-transaction-id" type="text" value="" class="formItem"/>
 
+            <label for="epg-session-id">Session ID</label>
+            <input id="epg-session-id" type="text" value="" class="formItem"/>
+
             <button class="formItem" onclick="getEpgTransaction(
-                document.getElementById('epg-transaction-id').value
+                document.getElementById('epg-transaction-id').value,
+                document.getElementById('epg-session-id').value
             )">
                 Get Transaction
             </button>
@@ -168,8 +208,6 @@
             </select>
             <label for="pmg-redirect-url">Redirect URL</label>
             <input id="pmg-redirect-url" type="text" value="" class="formItem"/>
-            <label for="pmg-push-status-url">Push Status URL</label>
-            <input id="pmg-push-status-url" type="text" value="" class="formItem"/>
 
             <button class="formItem" onclick="createPmgTransaction(
                 parseFloat(document.getElementById('pmg-amount').value),
@@ -178,8 +216,7 @@
                 document.getElementById('pmg-currency-code').value,
                 document.getElementById('pmg-country-code').value,
                 document.getElementById('pmg-trading-brand').value,
-                document.getElementById('pmg-redirect-url').value,
-                document.getElementById('pmg-push-status-url').value
+                document.getElementById('pmg-redirect-url').value
         )">Make Payment
             </button>
         </div>
@@ -198,13 +235,9 @@
     </div>
     <div class="rows">
         <div>
-            <h2>Transaction</h2>
+            <h2>Result</h2>
             <div id="result" style="white-space: pre">
             </div>
-        </div>
-        <div>
-            <h2>Notification</h2>
-            <div id="notification" style="white-space: pre"></div>
         </div>
     </div>
 </div>

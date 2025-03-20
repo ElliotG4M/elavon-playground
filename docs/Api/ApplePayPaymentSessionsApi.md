@@ -1,10 +1,10 @@
 # Gear4music\ElavonPlayground\V1\EPG\ApplePayPaymentSessionsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createApplePayPaymentSession()**](ApplePayPaymentSessionsApi.md#createApplePayPaymentSession) | **POST** /apple-pay-payment-sessions | Create ApplePayPaymentSession |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createApplePayPaymentSession()**](ApplePayPaymentSessionsApi.md#createApplePayPaymentSession) | **POST** /apple-pay-payment-sessions | Create ApplePayPaymentSession
 
 
 ## `createApplePayPaymentSession()`
@@ -51,12 +51,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **apple_pay_payment_session_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ApplePayPaymentSessionInput**](../Model/ApplePayPaymentSessionInput.md)| object (ApplePayPaymentSession) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **apple_pay_payment_session_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ApplePayPaymentSessionInput**](../Model/ApplePayPaymentSessionInput.md)| object (ApplePayPaymentSession) | [optional]
 
 ### Return type
 

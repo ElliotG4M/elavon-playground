@@ -1,12 +1,12 @@
 # Gear4music\ElavonPlayground\V1\EPG\HostedCardsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createHostedCard()**](HostedCardsApi.md#createHostedCard) | **POST** /hosted-cards | Create HostedCard |
-| [**retrieveHostedCard()**](HostedCardsApi.md#retrieveHostedCard) | **GET** /hosted-cards/{id} | Retrieve HostedCard |
-| [**updateHostedCard()**](HostedCardsApi.md#updateHostedCard) | **POST** /hosted-cards/{id} | Update HostedCard |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createHostedCard()**](HostedCardsApi.md#createHostedCard) | **POST** /hosted-cards | Create HostedCard
+[**retrieveHostedCard()**](HostedCardsApi.md#retrieveHostedCard) | **GET** /hosted-cards/{id} | Retrieve HostedCard
+[**updateHostedCard()**](HostedCardsApi.md#updateHostedCard) | **POST** /hosted-cards/{id} | Update HostedCard
 
 
 ## `createHostedCard()`
@@ -53,12 +53,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **hosted_card_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\HostedCardInput**](../Model/HostedCardInput.md)| object (HostedCard) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **hosted_card_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\HostedCardInput**](../Model/HostedCardInput.md)| object (HostedCard) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
 
 ### Return type
 
@@ -120,11 +120,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| HostedCard [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| HostedCard [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -188,13 +188,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| HostedCard [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **hosted_card** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\HostedCard**](../Model/HostedCard.md)| object (HostedCard) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| HostedCard [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **hosted_card** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\HostedCard**](../Model/HostedCard.md)| object (HostedCard) | [optional]
 
 ### Return type
 

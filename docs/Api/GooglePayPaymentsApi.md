@@ -1,11 +1,11 @@
 # Gear4music\ElavonPlayground\V1\EPG\GooglePayPaymentsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createGooglePayPayment()**](GooglePayPaymentsApi.md#createGooglePayPayment) | **POST** /google-pay-payments | Create GooglePayPayment |
-| [**retrieveGooglePayPayment()**](GooglePayPaymentsApi.md#retrieveGooglePayPayment) | **GET** /google-pay-payments/{id} | Retrieve GooglePayPayment |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createGooglePayPayment()**](GooglePayPaymentsApi.md#createGooglePayPayment) | **POST** /google-pay-payments | Create GooglePayPayment
+[**retrieveGooglePayPayment()**](GooglePayPaymentsApi.md#retrieveGooglePayPayment) | **GET** /google-pay-payments/{id} | Retrieve GooglePayPayment
 
 
 ## `createGooglePayPayment()`
@@ -52,12 +52,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **google_pay_payment_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\GooglePayPaymentInput**](../Model/GooglePayPaymentInput.md)| object (GooglePayPayment) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **google_pay_payment_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\GooglePayPaymentInput**](../Model/GooglePayPaymentInput.md)| object (GooglePayPayment) | [optional]
 
 ### Return type
 
@@ -119,11 +119,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| GooglePayPayment [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| GooglePayPayment [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 

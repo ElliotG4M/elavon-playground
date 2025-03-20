@@ -1,11 +1,11 @@
 # Gear4music\ElavonPlayground\V1\EPG\ApplePayPaymentsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createApplePayPayment()**](ApplePayPaymentsApi.md#createApplePayPayment) | **POST** /apple-pay-payments | Create ApplePayPayment |
-| [**retrieveApplePayPayment()**](ApplePayPaymentsApi.md#retrieveApplePayPayment) | **GET** /apple-pay-payments/{id} | Retrieve ApplePayPayment |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createApplePayPayment()**](ApplePayPaymentsApi.md#createApplePayPayment) | **POST** /apple-pay-payments | Create ApplePayPayment
+[**retrieveApplePayPayment()**](ApplePayPaymentsApi.md#retrieveApplePayPayment) | **GET** /apple-pay-payments/{id} | Retrieve ApplePayPayment
 
 
 ## `createApplePayPayment()`
@@ -52,12 +52,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **apple_pay_payment_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ApplePayPaymentInput**](../Model/ApplePayPaymentInput.md)| object (ApplePayPayment) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **apple_pay_payment_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\ApplePayPaymentInput**](../Model/ApplePayPaymentInput.md)| object (ApplePayPayment) | [optional]
 
 ### Return type
 
@@ -119,11 +119,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ApplePayPayment [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ApplePayPayment [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 

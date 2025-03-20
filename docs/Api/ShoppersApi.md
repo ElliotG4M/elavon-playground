@@ -1,15 +1,15 @@
 # Gear4music\ElavonPlayground\V1\EPG\ShoppersApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createShopper()**](ShoppersApi.md#createShopper) | **POST** /shoppers | Create Shopper |
-| [**deleteShopper()**](ShoppersApi.md#deleteShopper) | **DELETE** /shoppers/{id} | Delete Shopper |
-| [**retrieveShopper()**](ShoppersApi.md#retrieveShopper) | **GET** /shoppers/{id} | Retrieve Shopper |
-| [**retrieveShoppers()**](ShoppersApi.md#retrieveShoppers) | **GET** /shoppers | Retrieve Shoppers |
-| [**retrieveShoppersStoredCards()**](ShoppersApi.md#retrieveShoppersStoredCards) | **GET** /shoppers/{id}/stored-cards | Retrieve Shoppers StoredCards |
-| [**updateShopper()**](ShoppersApi.md#updateShopper) | **POST** /shoppers/{id} | Update Shopper |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createShopper()**](ShoppersApi.md#createShopper) | **POST** /shoppers | Create Shopper
+[**deleteShopper()**](ShoppersApi.md#deleteShopper) | **DELETE** /shoppers/{id} | Delete Shopper
+[**retrieveShopper()**](ShoppersApi.md#retrieveShopper) | **GET** /shoppers/{id} | Retrieve Shopper
+[**retrieveShoppers()**](ShoppersApi.md#retrieveShoppers) | **GET** /shoppers | Retrieve Shoppers
+[**retrieveShoppersStoredCards()**](ShoppersApi.md#retrieveShoppersStoredCards) | **GET** /shoppers/{id}/stored-cards | Retrieve Shoppers StoredCards
+[**updateShopper()**](ShoppersApi.md#updateShopper) | **POST** /shoppers/{id} | Update Shopper
 
 
 ## `createShopper()`
@@ -56,12 +56,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **shopper** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Shopper**](../Model/Shopper.md)| object (Shopper) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **shopper** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Shopper**](../Model/Shopper.md)| object (Shopper) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
 
 ### Return type
 
@@ -120,9 +120,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Shopper [Resource ID](#section/Overview/Values). | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Shopper [Resource ID](#section/Overview/Values). |
 
 ### Return type
 
@@ -184,11 +184,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Shopper [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Shopper [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 
@@ -251,12 +251,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional] |
-| **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional]
+ **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -320,13 +320,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Shopper [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional] |
-| **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Shopper [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **page_token** | **string**| An opaque continuation token for this page, null for the first page. | [optional]
+ **limit** | **int**| Maximum number of items to return on this page. Elavon Payment Gateway can return a maximum of 200 items per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -390,13 +390,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Shopper [Resource ID](#section/Overview/Values). | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **shopper** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Shopper**](../Model/Shopper.md)| object (Shopper) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Shopper [Resource ID](#section/Overview/Values). |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **shopper** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\Shopper**](../Model/Shopper.md)| object (Shopper) | [optional]
 
 ### Return type
 

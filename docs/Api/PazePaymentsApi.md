@@ -1,11 +1,11 @@
 # Gear4music\ElavonPlayground\V1\EPG\PazePaymentsApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createPazePayment()**](PazePaymentsApi.md#createPazePayment) | **POST** /paze-payments | Create PazePayment |
-| [**retrievePazePayment()**](PazePaymentsApi.md#retrievePazePayment) | **GET** /paze-payments/{id} | Retrieve PazePayment |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createPazePayment()**](PazePaymentsApi.md#createPazePayment) | **POST** /paze-payments | Create PazePayment
+[**retrievePazePayment()**](PazePaymentsApi.md#retrievePazePayment) | **GET** /paze-payments/{id} | Retrieve PazePayment
 
 
 ## `createPazePayment()`
@@ -52,12 +52,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **paze_payment_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PazePaymentInput**](../Model/PazePaymentInput.md)| object (PazePayment) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **paze_payment_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\PazePaymentInput**](../Model/PazePaymentInput.md)| object (PazePayment) | [optional]
 
 ### Return type
 
@@ -119,11 +119,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| PazePayment [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| PazePayment [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 

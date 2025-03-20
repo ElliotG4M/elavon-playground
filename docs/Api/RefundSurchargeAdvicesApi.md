@@ -1,11 +1,11 @@
 # Gear4music\ElavonPlayground\V1\EPG\RefundSurchargeAdvicesApi
 
-All URIs are relative to https://uat.api.converge.eu.elavonaws.com, except if the operation defines another base path.
+All URIs are relative to https://uat.api.converge.eu.elavonaws.com.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createRefundSurchargeAdvice()**](RefundSurchargeAdvicesApi.md#createRefundSurchargeAdvice) | **POST** /refund-surcharge-advices | Create RefundSurchargeAdvice |
-| [**retrieveRefundSurchargeAdvice()**](RefundSurchargeAdvicesApi.md#retrieveRefundSurchargeAdvice) | **GET** /refund-surcharge-advices/{id} | Retrieve RefundSurchargeAdvice |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createRefundSurchargeAdvice()**](RefundSurchargeAdvicesApi.md#createRefundSurchargeAdvice) | **POST** /refund-surcharge-advices | Create RefundSurchargeAdvice
+[**retrieveRefundSurchargeAdvice()**](RefundSurchargeAdvicesApi.md#retrieveRefundSurchargeAdvice) | **GET** /refund-surcharge-advices/{id} | Retrieve RefundSurchargeAdvice
 
 
 ## `createRefundSurchargeAdvice()`
@@ -52,12 +52,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
-| **content_type** | **string**| Media type of the request body. | [optional] |
-| **refund_surcharge_advice_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\RefundSurchargeAdviceInput**](../Model/RefundSurchargeAdviceInput.md)| object (RefundSurchargeAdvice) | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
+ **content_type** | **string**| Media type of the request body. | [optional]
+ **refund_surcharge_advice_input** | [**\Gear4music\ElavonPlayground\V1\EPG\Model\RefundSurchargeAdviceInput**](../Model/RefundSurchargeAdviceInput.md)| object (RefundSurchargeAdvice) | [optional]
 
 ### Return type
 
@@ -119,11 +119,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| RefundSurchargeAdvice [Resource ID](#section/Overview/Values) | |
-| **accept** | **string**| Media types the client will accept. | [optional] |
-| **accept_version** | **int**| API version requested by client. | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| RefundSurchargeAdvice [Resource ID](#section/Overview/Values) |
+ **accept** | **string**| Media types the client will accept. | [optional]
+ **accept_version** | **int**| API version requested by client. | [optional]
 
 ### Return type
 

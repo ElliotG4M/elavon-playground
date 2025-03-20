@@ -4,9 +4,21 @@ declare(strict_types=1);
 
 namespace Gear4music\ElavonPlayground\V1\EPG;
 
+use Gear4music\ElavonPlayground\V1\EPG\ElavonPlayground\AccountsApi;
+use Gear4music\ElavonPlayground\V1\EPG\ElavonPlayground\OrdersApi;
+use Gear4music\ElavonPlayground\V1\EPG\ElavonPlayground\PaymentSessionsApi;
 use Gear4music\ElavonPlayground\V1\EPG\ElavonPlayground\TransactionsApi;
 use Gear4music\ElavonPlayground\V1\EPG\Model\Blik;
+use Gear4music\ElavonPlayground\V1\EPG\Model\Contact;
 use Gear4music\ElavonPlayground\V1\EPG\Model\FailureWrapper;
+use Gear4music\ElavonPlayground\V1\EPG\Model\HppType;
+use Gear4music\ElavonPlayground\V1\EPG\Model\Order;
+use Gear4music\ElavonPlayground\V1\EPG\Model\OrderInput;
+use Gear4music\ElavonPlayground\V1\EPG\Model\OrderItem;
+use Gear4music\ElavonPlayground\V1\EPG\Model\OrderItemType;
+use Gear4music\ElavonPlayground\V1\EPG\Model\PaymentMethod;
+use Gear4music\ElavonPlayground\V1\EPG\Model\PaymentSession;
+use Gear4music\ElavonPlayground\V1\EPG\Model\PaymentSessionInput;
 use Gear4music\ElavonPlayground\V1\EPG\Model\PositiveAmountAndCurrency;
 use Gear4music\ElavonPlayground\V1\EPG\Model\SaleTransaction;
 use Gear4music\ElavonPlayground\V1\EPG\Model\ShopperInteraction;
@@ -16,16 +28,38 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 class Client
 {
+    const ACCEPT_JSON = 'application/json';
+    const API_VERSION = 1;
+
     private TransactionsApi $transactionsApi;
+    private OrdersApi $ordersApi;
+    private PaymentSessionsApi $paymentSessionsApi;
+    private AccountsApi $accountsApi;
+
+    private string $host;
 
     public function __construct(string $host, string $merchantID, string $secretKey)
     {
+        $this->host = $host;
+        $configuration = Configuration::getDefaultConfiguration()
+            ->setUsername($merchantID)
+            ->setPassword($secretKey)
+            ->setHost($host);
         $this->transactionsApi = new TransactionsApi(
             new \GuzzleHttp\Client(),
-            Configuration::getDefaultConfiguration()
-                ->setUsername($merchantID)
-                ->setPassword($secretKey)
-                ->setHost($host)
+            $configuration
+        );
+        $this->ordersApi = new OrdersApi(
+            new \GuzzleHttp\Client(),
+            $configuration
+        );
+        $this->paymentSessionsApi = new PaymentSessionsApi(
+            new \GuzzleHttp\Client(),
+            $configuration
+        );
+        $this->accountsApi = new AccountsApi(
+            new \GuzzleHttp\Client(),
+            $configuration
         );
     }
 
@@ -110,6 +144,216 @@ class Client
     public function getTransaction(string $transactionId): Transaction
     {
         $response = $this->transactionsApi->retrieveTransaction($transactionId);
+        if ($response instanceof FailureWrapper) {
+            throw new \Exception(
+                sprintf(
+                    "Error: Code: %s, Desc: %s",
+                    $response->getFailures()[0]->getCode(),
+                    $response->getFailures()[0]->getDescription(),
+                ),
+                $response->getStatus()
+            );
+        } else {
+            return $response;
+        }
+    }
+
+
+    /**
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function createOrder(
+        float $amount,
+        string $currencyCode, // ISO3 currency code
+        float $deliveryPrice,
+        float $taxAmount,
+        string $orderNumber,
+        string $name, // Address details to populate shipTo field. BillTo populated in the payment session request
+        string $address1,
+        string $address2,
+        string $city,
+        string $postCode,
+        string $countryCode, // ISO3 country code! (differs from PMG's ISO2)
+        string $email, // Customer email
+        string $phone, // Customer phone number
+        array $goodsData = [
+            [
+                'name' => 'Guitar',
+                'quantity' => 1,
+                'price' => 100.00,
+            ],
+            [
+                'name' => 'Drumsticks',
+                'quantity' => 2,
+                'price' => 10.00,
+            ],
+        ]
+    ): Order
+    {
+        $amount = new PositiveAmountAndCurrency([
+            'amount' => $amount,
+            'currency_code' => $currencyCode,
+        ]);
+
+        $items = [];
+        foreach ($goodsData as $item) {
+            $total = new PositiveAmountAndCurrency([
+                'amount' => $item['quantity'] * $item['price'],
+                'currency_code' => $currencyCode,
+            ]);
+            $unitPrice = new PositiveAmountAndCurrency([
+                'amount' => $item['price'],
+                'currency_code' => $currencyCode,
+            ]);
+            $items[] = new OrderItem([
+                'total' => $total,
+                'unit_price' => $unitPrice,
+                'quantity' => $item['quantity'],
+                'description' => $item['name'],
+                'type' => OrderItemType::GOODS,
+            ]);
+        }
+
+        $items[] = new OrderItem([
+            'total' => new PositiveAmountAndCurrency([
+                'amount' => $deliveryPrice,
+                'currency_code' => $currencyCode,
+            ]),
+            'description' => 'Delivery',
+            'type' => OrderItemType::SHIPPING,
+        ]);
+
+        $items[] = new OrderItem([
+            'total' => new PositiveAmountAndCurrency([
+                'amount' => $taxAmount,
+                'currency_code' => $currencyCode,
+            ]),
+            'description' => 'Tax',
+            'type' => OrderItemType::TAX,
+        ]);
+
+        $shipTo = new Contact([
+            'full_name' => $name,
+            'street1' => $address1,
+            'street2' => $address2,
+            'city' => $city,
+            'postal_code' => $postCode,
+            'country_code' => $countryCode,
+            'email' => $email,
+            'primary_phone' => $phone,
+        ]);
+
+        $orderInput = new OrderInput([
+            'total' => $amount,
+            'description' => 'Musical instruments and music equipment',
+            'items' => $items,
+            'ship_to' => $shipTo,
+            'shopper_email_address' => $email,
+            'order_reference' => $orderNumber,
+        ]);
+
+        $response = $this->ordersApi->createOrder(
+            self::ACCEPT_JSON,
+            self::API_VERSION,
+            self::ACCEPT_JSON,
+            $orderInput
+        );
+        if ($response instanceof FailureWrapper) {
+            throw new \Exception(
+                sprintf(
+                    "Error: Code: %s, Desc: %s",
+                    $response->getFailures()[0]->getCode(),
+                    $response->getFailures()[0]->getDescription(),
+                ),
+                $response->getStatus()
+            );
+        } else {
+            return $response;
+        }
+    }
+
+    /**
+     * @param string $orderHref
+     * @param string $account
+     * @param string $originUrl
+     * @param string $name
+     * @param string $address1
+     * @param string $address2
+     * @param string $city
+     * @param string $postCode
+     * @param string $countryCode
+     * @param string $phone
+     * @return PaymentSession
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function createPaymentSession(
+        string $orderHref, // Order href returned by createOrder endpoint
+        string $account, // Account ID
+        string $originUrl, // Top level URL from which the payment session was initiated
+        string $name, // Billing Address
+        string $address1,
+        string $address2,
+        string $city,
+        string $postCode,
+        string $countryCode, // ISO3
+        string $email,
+        string $phone
+    ): PaymentSession
+    {
+        $billTo = new Contact([
+            'full_name' => $name,
+            'street1' => $address1,
+            'street2' => $address2,
+            'city' => $city,
+            'postal_code' => $postCode,
+            'country_code' => $countryCode,
+            'primary_phone' => $phone,
+            'email' => $email,
+        ]);
+
+        $paymentSessionInput = new PaymentSessionInput([
+            'order' => $orderHref,
+            'account' => $this->host . '/accounts/' . $account, // build Elavon href for our account - will be needed for separate AV/G4M accounts
+            'origin_url' => $originUrl,
+            'do_create_transaction' => true,
+            'bill_to' => $billTo,
+            'allowed_payment_methods' => [PaymentMethod::CARD, PaymentMethod::BLIK], // For now in our actual implementation we can restrict this to Blik only
+            'allowed_payment_method_origins' => [PaymentMethod::CARD, PaymentMethod::BLIK],
+            'hpp_type' => HppType::LIGHTBOX,
+            'shopper_email_address' => $email,
+        ]);
+
+        $response = $this->paymentSessionsApi->createPaymentSession(
+            self::ACCEPT_JSON,
+            self::API_VERSION,
+            self::ACCEPT_JSON,
+            $paymentSessionInput
+        );
+        if ($response instanceof FailureWrapper) {
+            throw new \Exception(
+                sprintf(
+                    "Error: Code: %s, Desc: %s",
+                    $response->getFailures()[0]->getCode(),
+                    $response->getFailures()[0]->getDescription(),
+                ),
+                $response->getStatus()
+            );
+        } else {
+            return $response;
+        }
+    }
+
+    /**
+     * @param string $sessionId
+     * @return PaymentSession
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function getSession(string $sessionId): PaymentSession
+    {
+        $response = $this->paymentSessionsApi->retrievePaymentSession($sessionId);
         if ($response instanceof FailureWrapper) {
             throw new \Exception(
                 sprintf(
