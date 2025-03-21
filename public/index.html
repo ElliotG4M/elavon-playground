@@ -61,7 +61,7 @@
             }
         });
         const responseJson = await response.json();
-        document.getElementById('result').innerHTML = JSON.stringify(responseJson, null, 4);
+        document.getElementById('result').innerHTML = '<div>NOW LOADING ELAVON HOSTED PAYMENT PAGE...</div><div>Current Session details:</div>' + JSON.stringify(responseJson, null, 4);
         let lightbox;
         console.log(responseJson);
         const sessionId = responseJson.session.id;
