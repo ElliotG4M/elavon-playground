@@ -41,7 +41,7 @@ class CreatePmgTransaction extends ExtendedController implements EnvironmentAwar
                 'en',
                 $request->redirect_url,
                 $this->getEnvironment()->getVar('ELAVON_PROCESSOR_ID'),
-                $request->push_status_url
+                ''
             );
         } catch (\Exception $e) {
             $this->setResponseJson(["error" => $e->getMessage()]);
